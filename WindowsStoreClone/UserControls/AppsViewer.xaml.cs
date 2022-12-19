@@ -37,5 +37,9 @@ namespace WindowsStoreClone.UserControls
         {
 
         }
+        private void ScrollRight_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
