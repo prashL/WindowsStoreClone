@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MiscUtil;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +26,14 @@ namespace WindowsStoreClone.UserControls
         public AnApp()
         {
             InitializeComponent();
+            List<string> listFile = Directory.GetFiles(Environment.CurrentDirectory + @"\..\..\Images", "*.png").ToList<string>();
+            FileInfo myRandomFile = new FileInfo
+                (listFile[StaticRandom.Next(listFile.Count)]);
+            ProductImage.Source = new BitmapImage
+                (new Uri(myRandomFile.FullName, UriKind.RelativeOrAbsolute));
+            AppNameText.Text=(new CultureInfo("en-US"   ,false).TextInfo)
+                    .ToTitleCase(myRandomFile.FullName.Split('\\').Last()
+                    .Split('-').Last().Split('.').First());
         }
 
         private void ProductImage_MouseUp(object sender, MouseButtonEventArgs e)

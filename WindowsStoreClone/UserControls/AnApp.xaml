@@ -18,6 +18,7 @@
         <Image Grid.Row="0"
                Name="ProductImage"
                MouseUp="ProductImage_MouseUp" />
+
         <Grid Grid.Row="1"
               Name="BottomGrid"
               Background="Black"
