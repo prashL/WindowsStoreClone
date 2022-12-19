@@ -38,7 +38,7 @@ namespace WindowsStoreClone.UserControls
 
         private void ProductImage_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Alert");
+            MessageBox.Show("Anomaly");
         }
     }
 }
