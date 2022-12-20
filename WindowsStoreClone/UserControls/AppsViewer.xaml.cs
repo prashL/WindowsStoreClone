@@ -28,17 +28,22 @@ namespace WindowsStoreClone.UserControls
             AppList.ItemsSource = apps;
             for (int i = 0; i < 9; i++)
             {
-                AnApp currApp=new AnApp();
+                AnApp currApp = new AnApp();
                 apps.Add(currApp);
             }
         }
 
         private void ScrollLeft_Click(object sender, RoutedEventArgs e)
         {
-
+            int widthOfOneApp = (int)(apps.First().ActualWidth + 2 * apps.First().Margin.Left);
+            AppsScrollView.ScrollToHorizontalOffset(AppsScrollView.HorizontalOffset -
+                1 * widthOfOneApp);
         }
         private void ScrollRight_Click(object sender, RoutedEventArgs e)
         {
+            int widthOfOneApp = (int)(apps.First().ActualWidth + 2 * apps.First().Margin.Left);
+            AppsScrollView.ScrollToHorizontalOffset(AppsScrollView.HorizontalOffset +
+                1 * widthOfOneApp);
 
         }
     }
