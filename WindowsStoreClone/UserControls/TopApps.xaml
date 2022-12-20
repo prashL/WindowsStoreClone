@@ -25,10 +25,10 @@
                Grid.ColumnSpan="3"
                VerticalAlignment="Stretch"
                HorizontalAlignment="Stretch"
-               Stretch="Fill"
+               Stretch="Fill"              
+               Margin="2,2,2,2"
                Source="/Images/TopAppIcons/81-tropical.png"
-               MouseUp="Image_MouseUp"
-               Margin="2,2,2,2" />
+               MouseUp="Image_MouseUp" />
         <Image Grid.Row="0"
                Grid.Column="4"
                VerticalAlignment="Stretch"
