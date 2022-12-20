@@ -37,14 +37,24 @@ namespace WindowsStoreClone.UserControls
         {
             int widthOfOneApp = (int)(apps.First().ActualWidth + 2 * apps.First().Margin.Left);
             AppsScrollView.ScrollToHorizontalOffset(AppsScrollView.HorizontalOffset -
-                1 * widthOfOneApp);
+                4 * widthOfOneApp);
         }
         private void ScrollRight_Click(object sender, RoutedEventArgs e)
         {
             int widthOfOneApp = (int)(apps.First().ActualWidth + 2 * apps.First().Margin.Left);
             AppsScrollView.ScrollToHorizontalOffset(AppsScrollView.HorizontalOffset +
-                1 * widthOfOneApp);
+                4 * widthOfOneApp);
 
+        }
+
+        private void AppsScrollView_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            e.Handled= true;
+            var eventArg=new MouseWheelEventArgs(e.MouseDevice,e.Timestamp,e.Delta);
+            eventArg.RoutedEvent = UIElement.MouseWheelEvent;
+            eventArg.Source = sender;
+            var parent=((Control)sender).Parent as UIElement;
+            parent.RaiseEvent(eventArg);
         }
     }
 }

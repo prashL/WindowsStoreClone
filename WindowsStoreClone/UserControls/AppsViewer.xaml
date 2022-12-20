@@ -18,10 +18,18 @@
             <ColumnDefinition Width="50" />
             <ColumnDefinition Width="0.02*" />
         </Grid.ColumnDefinitions>
-        <Button Width="40" Height="40" Margin="4" Grid.Column="0" VerticalAlignment="Center"
-                Name="ScrollLeft" Click="ScrollLeft_Click" Content="&lt;"></Button>
-        <ScrollViewer Grid.Column="1" x:Name="AppsScrollView" VerticalScrollBarVisibility="Hidden"
-                      HorizontalScrollBarVisibility="Hidden">
+        <Button Width="40"
+                Height="40"
+                Margin="4"
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Name="ScrollLeft"
+                Click="ScrollLeft_Click"
+                Content="&lt;"></Button>
+        <ScrollViewer Grid.Column="1"
+                      x:Name="AppsScrollView"
+                      VerticalScrollBarVisibility="Hidden"
+                      HorizontalScrollBarVisibility="Hidden" PreviewMouseWheel="AppsScrollView_PreviewMouseWheel">
             <ScrollViewer.Resources>
                 <DataTemplate x:Key="AppListTemplate">
                     <StackPanel />

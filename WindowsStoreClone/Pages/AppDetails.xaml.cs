@@ -12,26 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WindowsStoreClone.Pages;
 
-namespace WindowsStoreClone
+namespace WindowsStoreClone.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AppDetails.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AppDetails : Page
     {
-        Main MainWindowContentPage;
-        public MainWindow()
+        public AppDetails()
         {
             InitializeComponent();
-            MainWindowContentPage = new Main();
-        }
-
-        private void MainWindowFrame_Loaded(object sender, RoutedEventArgs e)
-        {
-            AppDetails appDetails   =new AppDetails();
-            MainWindowFrame.Content = appDetails;//MainWindowContentPage;
         }
     }
 }
